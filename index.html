@@ -19,6 +19,9 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
+          <form id="search-form">
+            <input type="search" placeholder="Type a city..." />
+          </form>
           <div class="overwiew">
             <h1 id="city"></h1>
             <ul>
@@ -29,13 +32,8 @@
           <div class="row">
             <div class="col-6">
               <div class="clearfix weather-temp">
-                <br />
-                <div>
-                  <img
-                    src="https://spng.pinpng.com/pngs/s/183-1837048_download-sun-behind-cloud-emoji-image-in-png.png"
-                    width="50px"
-                    class="emoji"
-                  />
+                <img src="" id="icon" class="float-left" />
+                <div class="float-left">
                   <strong id="temp"></strong>
                   <span class="units">°C |<a href="#">°F</a> </span>
                 </div>

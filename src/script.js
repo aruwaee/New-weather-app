@@ -28,20 +28,22 @@ function displayTemp(response) {
   let descriptionElement = document.querySelector("#description");
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
 
   cityElement.innerHTML = response.data.name;
-
   tempElement.innerHTML = Math.round(response.data.main.temp);
-
   descriptionElement.innerHTML = response.data.weather[0].description;
-
   humidityElement.innerHTML = response.data.main.humidity;
-
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute =
+    ("src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.setAttribute = ("alt", response.data.weather[0].description);
 }
 
 let apiKey = "6710d6c63712eab1c794b73fa7dd98bb";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Ibadan,Nigeria&appid=${apiKey}&units=metric`;
+let city = "Ibadan";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayTemp);
