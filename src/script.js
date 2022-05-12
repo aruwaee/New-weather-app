@@ -57,15 +57,15 @@ function handleSubmit(event) {
 
 function displayFahTemp(event) {
   event.preventDefault();
-  let fahTemp = (celTemp * 9) / 5 + 32;
   let tempElement = document.querySelector("#temp");
-  //remove the active class the celsius link
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
+
+  let fahTemp = (celTemp * 9) / 5 + 32;
   tempElement.innerHTML = Math.round(fahTemp);
 }
 
-function displaycelTemp(event) {
+function displayCelTemp(event) {
   event.preventDefault();
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
@@ -79,8 +79,5 @@ form.addEventListener("submit", handleSubmit);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahTemp);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displaycelTemp);
 
 search("Ibadan");
