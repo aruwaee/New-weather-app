@@ -57,6 +57,7 @@ function handleSubmit(event) {
 
 function displayFahTemp(event) {
   event.preventDefault();
+
   let tempElement = document.querySelector("#temp");
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
