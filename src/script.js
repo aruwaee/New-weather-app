@@ -43,7 +43,7 @@ function displayForecast(response) {
         `
 <div class="col-2">
   <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
-  ${index}
+  
   <img 
   src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
   alt=""
@@ -91,10 +91,11 @@ function displayTemp(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  iconElement.setAttribute =
-    ("src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-  iconElement.setAttribute = ("alt", response.data.weather[0].description);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 
   getForecast(response.data.coord);
 }
@@ -111,30 +112,7 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function displayFahTemp(event) {
-  event.preventDefault();
-
-  let tempElement = document.querySelector("#temp");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-
-  let fahTemp = (celTemp * 9) / 5 + 32;
-  tempElement.innerHTML = Math.round(fahTemp);
-}
-
-function displayCelTemp(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let tempElement = document.querySelector("#temp");
-  tempElement.innerHTML = Math.round(celTemp);
-}
-let celTemp = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahTemp);
 
 search("Ibadan");

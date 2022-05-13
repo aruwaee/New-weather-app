@@ -1,16 +1,9 @@
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-top: 30px;
 }
-.weather-app-wrapper {
-  max-width: 600px;
-  margin: 40px auto;
-}
-.weather-app {
-  padding: 20px;
-  border: 3px solid #5f0e04;
-  border-radius: 5px;
-}
+
 h1 {
   margin-top: 20px;
   color: rgb(122, 15, 155);
@@ -32,8 +25,13 @@ li {
   font-weight: 100;
   line-height: 19px;
 }
-li::first-letter {
+li:first-letter {
   text-transform: capitalize;
+}
+.weather-app {
+  padding: 20px;
+  border: 3px solid #5f0e04;
+  border-radius: 5px;
 }
 .overview {
   margin-bottom: 20px;
@@ -45,22 +43,14 @@ li::first-letter {
 }
 .weather-temp strong {
   color: rgb(136, 68, 4);
-  font-size: 40px;
+  font-size: 50px;
   line-height: 1px;
-  margin-top: 15px;
-  margin-left: 15px;
+  font-weight: 500;
 }
 .weather-temp.units {
   position: relative;
   font-size: 16px;
   top: -34px;
-}
-.weather-temp.active {
-  color: black;
-  cursor: default;
-}
-.weather-temp.active:hover {
-  text-decoration: none;
 }
 .weather-forecast {
   margin-top: 20px;
